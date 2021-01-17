@@ -1,6 +1,6 @@
 package com.FRS;
 
-public class Address {
+/*public class Address {
     String street;
     String city;
     String state;
@@ -24,4 +24,4 @@ public class Address {
         this.city = address.city;
         this.state = address.state;
     }
-}
+}*/

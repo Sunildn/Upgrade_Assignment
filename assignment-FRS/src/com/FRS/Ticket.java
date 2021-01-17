@@ -10,6 +10,7 @@ public class Ticket {
     int seatNo;
     float price;
     boolean cancelled;
+    Flight flight;
 
     void checkStatus() {
         if (cancelled== true) {

@@ -1,14 +1,14 @@
 package com.FRS;
 
 public class Flight {
-    String flightNo;
-    String airlines;
-    int capacity;
-    int noOfSeatsBooked;
-    String getFlightDetails(){
+    private String flightNo;
+    private String airlines;
+    private int capacity;
+    private int noOfSeatsBooked;
+    public String getFlightDetails(){
         return "Flight No : "+ flightNo+" and "+"Airlines :"+airlines;
     }
-    boolean checkAvailabilityOfSeat(){boolean x;
+    public boolean checkAvailabilityOfSeat(){boolean x;
         if (noOfSeatsBooked < capacity){
             x = true;
         }else{
@@ -16,7 +16,7 @@ public class Flight {
         }
         return x;
     }
-    void incrementAvailableCounter(){
+    public void incrementAvailableCounter(){
         noOfSeatsBooked +=noOfSeatsBooked;
     }
 
@@ -31,5 +31,37 @@ public class Flight {
         this.airlines = flight.airlines;
         this.capacity = flight.capacity;
         this.noOfSeatsBooked = flight.noOfSeatsBooked;
+    }
+
+    public String getFlightNo() {
+        return flightNo;
+    }
+
+    public void setFlightNo(String flightNo) {
+        this.flightNo = flightNo;
+    }
+
+    public String getAirlines() {
+        return airlines;
+    }
+
+    public void setAirlines(String airlines) {
+        this.airlines = airlines;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getNoOfSeatsBooked() {
+        return noOfSeatsBooked;
+    }
+
+    public void setNoOfSeatsBooked(int noOfSeatsBooked) {
+        this.noOfSeatsBooked = noOfSeatsBooked;
     }
 }
