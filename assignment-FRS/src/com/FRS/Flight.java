@@ -63,4 +63,14 @@ public class Flight {
     public void setNoOfSeatsBooked(int noOfSeatsBooked) {
         this.noOfSeatsBooked = noOfSeatsBooked;
     }
+
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "flightNo='" + flightNo + '\'' +
+                ", airlines='" + airlines + '\'' +
+                ", capacity=" + capacity +
+                ", noOfSeatsBooked=" + noOfSeatsBooked +
+                '}';
+    }
 }

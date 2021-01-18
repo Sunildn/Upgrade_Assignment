@@ -4,27 +4,37 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Passenger passanger = new Passenger("sunil","8060494949","sunil.dn.sdd@gmail.com",
-                "church street","banglore","karnataka");
-        System.out.println(passanger.getAddressDetails());
-        System.out.println(passanger.getContactDetails());
-        System.out.println(passanger.getId());
+        //Flight object creation
+        //Due to Aggregation Relationship, Flight object formed outside Ticket class object.
+        Flight flight  = new Flight("4561","Jet",120,100);
+        System.out.println(flight);
 
-        Flight flight1 = new Flight("1","jetlag",100,4);
-        System.out.println(flight1.getFlightDetails());
-        System.out.println(flight1.checkAvailabilityOfSeat());
-        RegularTicket rt1= new RegularTicket("278dg","banglore","london","26/7 3.00",
-                "26/7 9.00",20,30000.0f,false,"food",flight1,passanger);
-        rt1.checkStatus();
-        Flight flight2 = flight1;
-        System.out.println(passanger.getId());
-        TouristTicket tt1 = new TouristTicket("2222","banglore","london","26/7 9",
-                        "27/7 7",20,30000.0f,false,"Taj",null, flight2, passanger);
+        //Passenger object creation
+        //Due to Aggregation Relationship, Passenger object formed outside Ticket class object.
+        Passenger p1 = new Passenger("Shrink","9874563210",
+                "Shashank@gmail.com","Old Street","Mumbai","Maharashtra");
+        System.out.println(p1.getContactDetails());
 
-        System.out.println(flight1.getFlightNo());
-        flight1.setFlightNo("ad134");
-        System.out.println(flight1.getFlightNo());
+        //Passenger object creation
+        //Due to Aggregation Relationship, Passenger object formed outside Ticket class object.
+        Passenger p2 = new Passenger( "Biswa","852431790"
+                ,"biswap7@yahoo.com","Malabar Street" , "Kolkata","WB");
 
-        System.out.println(rt1.durationOfJourney());
+        //RegularTicket object creation
+        RegularTicket regTicket = new RegularTicket("1","Delhi","Mumbai","29/11/20,6",
+                "29/11/20,10",10, 45000.00F,false,"food,water,snacks",flight,p1);
+
+        //TouristTicket object creation
+        TouristTicket tourTicket = new TouristTicket("2","Delhi" , "Mumbai","29/11/20,6 ",
+                "29/11/20,10",21,56000.00f,false,"Hotel Vue,Beach Ave,Mumbai",null,flight,p2);
+
+        printTicketDetails(regTicket);
+        printTicketDetails(tourTicket);
+        System.out.println(regTicket.durationOfJourney());
+
+        
+    }
+    public static void printTicketDetails(Ticket ticket){
+        System.out.println(ticket.getPnr());
     }
 }

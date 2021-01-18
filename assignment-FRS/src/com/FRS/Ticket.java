@@ -37,6 +37,11 @@ public abstract class Ticket {
     }
     //Method to return duration of journey
     public int durationOfJourney() {
+        String str1[] = departureDateTime.split(",");
+        int t1 = Integer.parseInt(str1[1]);
+        String  str2[]=arrivalDateTime.split(",");
+        int t2 =Integer.parseInt(str2[1]);
+        duration=t2-t1;
        return duration;
     }
     //Method to cancel the ticket

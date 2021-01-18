@@ -38,6 +38,15 @@ public class Passenger {
             this.phone= phone;
             this.emailId=emailId;
         }
+
+        @Override
+        public String toString() {
+            return "Contact{" +
+                    "name='" + name + '\'' +
+                    ", phone='" + phone + '\'' +
+                    ", emailId='" + emailId + '\'' +
+                    '}';
+        }
     }
     //Nested class Address class inside Passenger class
     private static class Address {
@@ -59,6 +68,14 @@ public class Passenger {
             this.street =street;
             this.city = city;
             this.state = state;
+        }
+        @Override
+        public String toString() {
+            return "Address{" +
+                    "street='" + street + '\'' +
+                    ", city='" + city + '\'' +
+                    ", state='" + state + '\'' +
+                    '}';
         }
     }
     // Method to get contact details
